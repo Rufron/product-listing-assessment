@@ -1,0 +1,55 @@
+[
+  {
+    "id": "1",
+    "title": "Classic Denim Jacket",
+    "imageUrl": "https://picsum.photos/seed/denim/400/400",
+    "htmlDescription": "<p>A timeless <b>denim jacket</b> crafted from premium cotton. Features a button-front closure and two chest pockets.</p><ul><li>100% Cotton</li><li>Machine washable</li></ul>",
+    "variants": [
+      { "id": "v1a", "label": "S", "price": 49.99, "currency": "USD", "imageUrl": "https://picsum.photos/seed/denim-s/400/400" },
+      { "id": "v1b", "label": "M", "price": 49.99, "currency": "USD", "imageUrl": "https://picsum.photos/seed/denim-m/400/400" },
+      { "id": "v1c", "label": "L", "price": 54.99, "currency": "USD", "imageUrl": "https://picsum.photos/seed/denim-l/400/400" }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Running Shoes Pro",
+    "imageUrl": "https://picsum.photos/seed/shoes/400/400",
+    "htmlDescription": "<p>Lightweight <em>performance running shoes</em> with responsive cushioning.</p><div>Breathable mesh upper for maximum airflow.</div>",
+    "variants": [
+      { "id": "v2a", "label": "US 8", "price": 89.99, "currency": "USD", "imageUrl": "https://picsum.photos/seed/shoes-8/400/400" },
+      { "id": "v2b", "label": "US 9", "price": 89.99, "currency": "USD", "imageUrl": "https://picsum.photos/seed/shoes-9/400/400" },
+      { "id": "v2c", "label": "US 10", "price": 94.99, "currency": "USD", "imageUrl": "https://picsum.photos/seed/shoes-10/400/400" }
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Wool Beanie",
+    "imageUrl": "https://picsum.photos/seed/beanie/400/400",
+    "htmlDescription": "<p>Soft merino <strong>wool beanie</strong> for cold weather. Double-layered for extra warmth.</p>",
+    "variants": [
+      { "id": "v3a", "label": "One Size", "price": 24.99, "currency": "USD", "imageUrl": "https://picsum.photos/seed/beanie/400/400" }
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Canvas Backpack",
+    "imageUrl": "https://picsum.photos/seed/backpack/400/400",
+    "htmlDescription": "<P>Durable canvas backpack with padded laptop compartment.</P><p>Multiple organizer pockets and water-resistant coating.</p>",
+    "variants": [
+      { "id": "v4a", "label": "20L", "price": 39.99, "currency": "USD", "imageUrl": "https://picsum.photos/seed/backpack-20/400/400" },
+      { "id": "v4b", "label": "30L", "price": 49.99, "currency": "USD", "imageUrl": "https://picsum.photos/seed/backpack-30/400/400" }
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Leather Belt",
+    "imageUrl": "https://picsum.photos/seed/belt/400/400",
+    "htmlDescription": "<p>Genuine leather belt with a brushed nickel buckle. <br/>Available in multiple sizes.</p>",
+    "variants": [
+      { "id": "v5a", "label": "S", "price": 29.99, "currency": "USD", "imageUrl": null },
+      { "id": "v5b", "label": "M", "price": 29.99, "currency": "USD", "imageUrl": null },
+      { "id": "v5c", "label": "L", "price": 34.99, "currency": "USD", "imageUrl": null },
+      { "id": "v5d", "label": "XL", "price": 34.99, "currency": "USD", "imageUrl": null }
+    ]
+  }
+]
