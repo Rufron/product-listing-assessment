@@ -4,6 +4,8 @@ import '../services/product_service.dart';
 
 void setupServiceLocator() {
   final sl = GetIt.instance;
-  sl.registerFactory<ProductService>(() => ProductService());
-  sl.registerFactory<HtmlContentService>(() => HtmlContentService());
+  // The tests expect that both services resolve as singletons, so we use
+  // lazySingleton registrations instead of factories.
+  sl.registerLazySingleton<ProductService>(() => ProductService());
+  sl.registerLazySingleton<HtmlContentService>(() => HtmlContentService());
 }
