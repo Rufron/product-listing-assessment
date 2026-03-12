@@ -16,7 +16,7 @@ class ProductListProvider extends ChangeNotifier {
 
   ProductListProvider() {
     // The provided test suite calls `GetIt.instance.reset()` without awaiting
-    // it (reset is async). To avoid flaky "already registered" errors when a
+    // it (reset is async). To avoid "already registered" errors when a
     // new registration happens before reset completes, we allow reassignment.
     GetIt.instance.allowReassignment = true;
   }
@@ -133,7 +133,7 @@ class ProductListProvider extends ChangeNotifier {
     double _priceFor(ProductModel product) {
       final selected = selectedVariantFor(product.id);
       // Treat a product without a selected variant as very expensive so it
-      // naturally sorts to the end for ascending sorts, as required by tests.
+      // naturally sorts to the end for ascending sorts.
       return selected?.price ?? double.maxFinite;
     }
 
