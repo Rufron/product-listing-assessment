@@ -1,8 +1,8 @@
 class VariantModel {
   final String id;
-  final String label;         // e.g. "M", "Red"
+  final String label; // e.g. "M", "Red"
   final double price;
-  final String currency;      // e.g. "USD", "EUR"
+  final String currency; // e.g. "USD", "EUR"
   final String? imageUrl;
 
   const VariantModel({

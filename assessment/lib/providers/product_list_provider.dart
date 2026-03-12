@@ -25,7 +25,8 @@ class ProductListProvider extends ChangeNotifier {
 
   List<ProductModel> get products => List.unmodifiable(_products);
 
-  List<ProductModel> get filteredProducts => List.unmodifiable(_filteredProducts);
+  List<ProductModel> get filteredProducts =>
+      List.unmodifiable(_filteredProducts);
 
   Set<String> get favoriteIds => Set.unmodifiable(_favoriteIds);
 

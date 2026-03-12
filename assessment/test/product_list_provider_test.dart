@@ -54,8 +54,8 @@ void main() {
     });
 
     test('transitions initial → loading → loaded on success', () async {
-      GetIt.instance
-          .registerLazySingleton<ProductService>(() => _SuccessProductService());
+      GetIt.instance.registerLazySingleton<ProductService>(
+          () => _SuccessProductService());
 
       final provider = ProductListProvider();
       final states = <ProductListState>[];
@@ -68,8 +68,8 @@ void main() {
     });
 
     test('products list is populated after successful load', () async {
-      GetIt.instance
-          .registerLazySingleton<ProductService>(() => _SuccessProductService());
+      GetIt.instance.registerLazySingleton<ProductService>(
+          () => _SuccessProductService());
 
       final provider = ProductListProvider();
       await provider.loadProducts();
@@ -79,8 +79,8 @@ void main() {
     });
 
     test('default selected variant is the first variant after load', () async {
-      GetIt.instance
-          .registerLazySingleton<ProductService>(() => _SuccessProductService());
+      GetIt.instance.registerLazySingleton<ProductService>(
+          () => _SuccessProductService());
 
       final provider = ProductListProvider();
       await provider.loadProducts();
@@ -91,8 +91,8 @@ void main() {
     });
 
     test('transitions initial → loading → error on failure', () async {
-      GetIt.instance
-          .registerLazySingleton<ProductService>(() => _FailingProductService());
+      GetIt.instance.registerLazySingleton<ProductService>(
+          () => _FailingProductService());
 
       final provider = ProductListProvider();
       final states = <ProductListState>[];
@@ -105,8 +105,8 @@ void main() {
     });
 
     test('errorMessage is set when load fails', () async {
-      GetIt.instance
-          .registerLazySingleton<ProductService>(() => _FailingProductService());
+      GetIt.instance.registerLazySingleton<ProductService>(
+          () => _FailingProductService());
 
       final provider = ProductListProvider();
       await provider.loadProducts();
@@ -116,8 +116,8 @@ void main() {
     });
 
     test('products list is empty after failed load', () async {
-      GetIt.instance
-          .registerLazySingleton<ProductService>(() => _FailingProductService());
+      GetIt.instance.registerLazySingleton<ProductService>(
+          () => _FailingProductService());
 
       final provider = ProductListProvider();
       await provider.loadProducts();
@@ -127,8 +127,8 @@ void main() {
 
     test('selectVariant updates the selected variant and notifies listeners',
         () async {
-      GetIt.instance
-          .registerLazySingleton<ProductService>(() => _SuccessProductService());
+      GetIt.instance.registerLazySingleton<ProductService>(
+          () => _SuccessProductService());
 
       final provider = ProductListProvider();
       await provider.loadProducts();
@@ -150,7 +150,8 @@ void main() {
       expect(notified, isTrue);
     });
 
-    test('selecting a variant on one product does not affect another', () async {
+    test('selecting a variant on one product does not affect another',
+        () async {
       GetIt.instance.registerLazySingleton<ProductService>(() {
         return _TwoProductService();
       });
@@ -172,8 +173,8 @@ void main() {
   group('refreshing state', () {
     test('loadProducts from loaded state enters refreshing, not loading',
         () async {
-      GetIt.instance
-          .registerLazySingleton<ProductService>(() => _SuccessProductService());
+      GetIt.instance.registerLazySingleton<ProductService>(
+          () => _SuccessProductService());
 
       final provider = ProductListProvider();
       await provider.loadProducts();
@@ -190,8 +191,8 @@ void main() {
     });
 
     test('products are visible during refreshing state', () async {
-      GetIt.instance
-          .registerLazySingleton<ProductService>(() => _SuccessProductService());
+      GetIt.instance.registerLazySingleton<ProductService>(
+          () => _SuccessProductService());
 
       final provider = ProductListProvider();
       await provider.loadProducts();
@@ -215,8 +216,8 @@ void main() {
     });
 
     test('refreshing transitions to error on failure', () async {
-      GetIt.instance
-          .registerLazySingleton<ProductService>(() => _SuccessProductService());
+      GetIt.instance.registerLazySingleton<ProductService>(
+          () => _SuccessProductService());
 
       final provider = ProductListProvider();
       await provider.loadProducts();
@@ -238,8 +239,8 @@ void main() {
 
     test('calling loadProducts while refreshing does not revert to loading',
         () async {
-      GetIt.instance
-          .registerLazySingleton<ProductService>(() => _SuccessProductService());
+      GetIt.instance.registerLazySingleton<ProductService>(
+          () => _SuccessProductService());
 
       final provider = ProductListProvider();
       await provider.loadProducts();
@@ -309,7 +310,8 @@ void main() {
       expect(provider.filteredProducts, hasLength(1));
     });
 
-    test('filterProducts before loadProducts returns empty list, does not crash',
+    test(
+        'filterProducts before loadProducts returns empty list, does not crash',
         () {
       final provider = ProductListProvider();
 
@@ -423,8 +425,8 @@ void main() {
       await provider.loadProducts();
 
       GetIt.instance.reset();
-      GetIt.instance.registerLazySingleton<ProductService>(() =>
-          _NoVariantProductService());
+      GetIt.instance.registerLazySingleton<ProductService>(
+          () => _NoVariantProductService());
 
       final provider2 = ProductListProvider();
       await provider2.loadProducts();
@@ -537,8 +539,8 @@ void main() {
     });
 
     test('favorites are preserved across loadProducts calls', () async {
-      GetIt.instance
-          .registerLazySingleton<ProductService>(() => _SuccessProductService());
+      GetIt.instance.registerLazySingleton<ProductService>(
+          () => _SuccessProductService());
 
       final provider = ProductListProvider();
       await provider.loadProducts();
@@ -552,8 +554,8 @@ void main() {
     });
 
     test('favorites survive error state', () async {
-      GetIt.instance
-          .registerLazySingleton<ProductService>(() => _SuccessProductService());
+      GetIt.instance.registerLazySingleton<ProductService>(
+          () => _SuccessProductService());
 
       final provider = ProductListProvider();
       await provider.loadProducts();
@@ -600,7 +602,8 @@ class _FilterProductService extends ProductService {
         imageUrl: 'https://example.com/jacket.jpg',
         htmlDescription: '<p>A warm jacket.</p>',
         variants: [
-          const VariantModel(id: 'v1', label: 'S', price: 49.99, currency: 'USD'),
+          const VariantModel(
+              id: 'v1', label: 'S', price: 49.99, currency: 'USD'),
         ],
       ),
       ProductModel(
@@ -609,7 +612,8 @@ class _FilterProductService extends ProductService {
         imageUrl: 'https://example.com/shirt.jpg',
         htmlDescription: '<p>A silk shirt.</p>',
         variants: [
-          const VariantModel(id: 'v2', label: 'M', price: 29.99, currency: 'USD'),
+          const VariantModel(
+              id: 'v2', label: 'M', price: 29.99, currency: 'USD'),
         ],
       ),
     ];
@@ -626,8 +630,10 @@ class _SortProductService extends ProductService {
         imageUrl: 'https://example.com/a.jpg',
         htmlDescription: '<p>A</p>',
         variants: [
-          const VariantModel(id: 'va1', label: 'S', price: 20.00, currency: 'USD'),
-          const VariantModel(id: 'va2', label: 'M', price: 8.00, currency: 'USD'),
+          const VariantModel(
+              id: 'va1', label: 'S', price: 20.00, currency: 'USD'),
+          const VariantModel(
+              id: 'va2', label: 'M', price: 8.00, currency: 'USD'),
         ],
       ),
       ProductModel(
@@ -636,8 +642,10 @@ class _SortProductService extends ProductService {
         imageUrl: 'https://example.com/b.jpg',
         htmlDescription: '<p>B</p>',
         variants: [
-          const VariantModel(id: 'vb1', label: 'S', price: 15.00, currency: 'USD'),
-          const VariantModel(id: 'vb2', label: 'M', price: 40.00, currency: 'USD'),
+          const VariantModel(
+              id: 'vb1', label: 'S', price: 15.00, currency: 'USD'),
+          const VariantModel(
+              id: 'vb2', label: 'M', price: 40.00, currency: 'USD'),
         ],
       ),
     ];
@@ -654,7 +662,8 @@ class _NoVariantProductService extends ProductService {
         imageUrl: 'https://example.com/a.jpg',
         htmlDescription: '<p>A</p>',
         variants: [
-          const VariantModel(id: 'v1', label: 'S', price: 10.00, currency: 'USD'),
+          const VariantModel(
+              id: 'v1', label: 'S', price: 10.00, currency: 'USD'),
         ],
       ),
       const ProductModel(
@@ -678,8 +687,10 @@ class _TwoProductService extends ProductService {
         imageUrl: 'https://example.com/shirt.jpg',
         htmlDescription: '<p>Shirt</p>',
         variants: [
-          const VariantModel(id: 'v1', label: 'S', price: 19.99, currency: 'USD'),
-          const VariantModel(id: 'v2', label: 'M', price: 21.99, currency: 'USD'),
+          const VariantModel(
+              id: 'v1', label: 'S', price: 19.99, currency: 'USD'),
+          const VariantModel(
+              id: 'v2', label: 'M', price: 21.99, currency: 'USD'),
         ],
       ),
       ProductModel(
@@ -688,7 +699,8 @@ class _TwoProductService extends ProductService {
         imageUrl: 'https://example.com/pants.jpg',
         htmlDescription: '<p>Pants</p>',
         variants: [
-          const VariantModel(id: 'v3', label: '30', price: 39.99, currency: 'USD'),
+          const VariantModel(
+              id: 'v3', label: '30', price: 39.99, currency: 'USD'),
         ],
       ),
     ];

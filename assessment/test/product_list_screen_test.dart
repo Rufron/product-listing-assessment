@@ -46,7 +46,8 @@ class _TwoProductService extends ProductService {
         imageUrl: 'https://example.com/jacket.jpg',
         htmlDescription: '<p>A warm jacket.</p>',
         variants: [
-          const VariantModel(id: 'v1', label: 'S', price: 49.99, currency: 'USD'),
+          const VariantModel(
+              id: 'v1', label: 'S', price: 49.99, currency: 'USD'),
         ],
       ),
       ProductModel(
@@ -55,7 +56,8 @@ class _TwoProductService extends ProductService {
         imageUrl: 'https://example.com/shirt.jpg',
         htmlDescription: '<p>A silk shirt.</p>',
         variants: [
-          const VariantModel(id: 'v2', label: 'M', price: 29.99, currency: 'USD'),
+          const VariantModel(
+              id: 'v2', label: 'M', price: 29.99, currency: 'USD'),
         ],
       ),
     ];
@@ -110,8 +112,8 @@ void main() {
 
     testWidgets('displays product title and initial price after load',
         (tester) async {
-      GetIt.instance
-          .registerLazySingleton<ProductService>(() => _SuccessProductService());
+      GetIt.instance.registerLazySingleton<ProductService>(
+          () => _SuccessProductService());
 
       await tester.pumpWidget(_buildScreen());
       await tester.pumpAndSettle();
@@ -122,8 +124,8 @@ void main() {
 
     testWidgets('selecting a variant updates the displayed price',
         (tester) async {
-      GetIt.instance
-          .registerLazySingleton<ProductService>(() => _SuccessProductService());
+      GetIt.instance.registerLazySingleton<ProductService>(
+          () => _SuccessProductService());
 
       await tester.pumpWidget(_buildScreen());
       await tester.pumpAndSettle();
@@ -136,8 +138,8 @@ void main() {
     });
 
     testWidgets('error state shows message and Retry button', (tester) async {
-      GetIt.instance
-          .registerLazySingleton<ProductService>(() => _FailingProductService());
+      GetIt.instance.registerLazySingleton<ProductService>(
+          () => _FailingProductService());
 
       await tester.pumpWidget(_buildScreen());
       await tester.pumpAndSettle();
@@ -171,7 +173,8 @@ void main() {
           imageUrl: 'https://example.com/jacket.jpg',
           htmlDescription: '<p>A warm jacket.</p>',
           variants: [
-            const VariantModel(id: 'v1', label: 'S', price: 49.99, currency: 'USD'),
+            const VariantModel(
+                id: 'v1', label: 'S', price: 49.99, currency: 'USD'),
           ],
         ),
       ];

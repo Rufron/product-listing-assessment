@@ -25,7 +25,8 @@ class _ProductListView extends StatelessWidget {
     final provider = context.watch<ProductListProvider>();
 
     final grid = switch (provider.state) {
-      ProductListState.initial || ProductListState.loading =>
+      ProductListState.initial ||
+      ProductListState.loading =>
         const _SkeletonGrid(),
       ProductListState.refreshing => Stack(
           children: [

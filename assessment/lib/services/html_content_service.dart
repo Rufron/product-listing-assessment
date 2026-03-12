@@ -4,6 +4,7 @@ class HtmlContentService {
   }
 
   bool hasBlockContent(String html) {
-    return RegExp(r'<(p|div|ul|ol|h[1-6])', caseSensitive: false).hasMatch(html);
+    return RegExp(r'<(p|div|ul|ol|h[1-6])', caseSensitive: false)
+        .hasMatch(html);
   }
 }
